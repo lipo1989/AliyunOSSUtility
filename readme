@@ -1,0 +1,23 @@
+=================================================
+This simple AliyunOSS utility kit  is designed to upload and check Junyi videos on AliyunOSS.
+
+=================================================
+
+分部上傳阿里雲操作說明(MultipartUploader)：
+1. 將欲上傳的檔案放在upload_files資料夾
+2. 建立一個upload_list.txt的檔案列出要上傳的檔案清單
+3. 使用文件編輯器打開AliyunOSSMultipartUploader.py，在第30及第31行的地方指定要上傳的bucket及bucket所在的endpoint
+   例如：bucket 'junyivideo'存在北京，endpoint即為'oss-cn-beijing.aliyuncs.com'
+        bucket 'junyivideo2'存在杭州，endpoint即為'oss.aliyuncs.com'或'oss-cn-hangzhou.aliyuncs.com'
+4. 執行 python MultipartUploader.py
+5. 執行完後會產生三個檔案：log.txt, error_list.txt, skip_list.txt。log.txt紀錄成功上傳的檔案資訊、error_list.txt紀錄上傳失敗的error message、skip_list.txt紀錄上傳失敗的檔案清單
+
+=================================================
+
+檢查阿里雲影片操作說明(VideoChecker)：
+1. 建立一個youtube_id_junyi.csv包含所有均一上的youtube影片id
+2. 修改第5及第6行的bucket infomation
+3. 執行python VideoChecker.py
+4. 結束後會產生youtube_id_missing.csv的檔案包含在阿里雲上找不到的影片id與http回傳訊息
+
+=================================================
